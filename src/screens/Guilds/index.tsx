@@ -19,11 +19,11 @@ export function Guilds({ handleGuildSelect }: Props) {
       owner: true
     },
     {
-      id: '',
+      id: '2',
       name:'Os Bixão',
       icon: 'image.png',
       owner: true
-    }
+    },
   ];
 
   return (
@@ -38,7 +38,9 @@ export function Guilds({ handleGuildSelect }: Props) {
           />
         )}
         showsVerticalScrollIndicator={false}
-        ItemSeparatorComponent={() => <ListDivider />}
+        contentContainerStyle={{ paddingBottom: 68, paddingTop: 103 }}
+        ItemSeparatorComponent={() => <ListDivider isCentered />}
+        ListHeaderComponent={() => <ListDivider isCentered />}
         style={styles.guilds}
       />
     </View>
