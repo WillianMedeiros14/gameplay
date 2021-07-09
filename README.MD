@@ -5,7 +5,7 @@
 <br>
 
 <h1 align="center">
-  <img alt="Gameplay" title="gameplay" src="./src/assets/imgApp/capa.png" width="70%"/>
+  <img alt="Gameplay" title="gameplay" src="./src/assets/imgApp/Capa.png" width="70%"/>
 </h1>
 
 <h1 align="center">
