@@ -1,19 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
-    Text
+    Text,
+    Alert
 } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import { userAuth } from '../../hooks/auth';
 
 import { Avatar } from '../Avatar';
+import { ModalSignOut } from '../ModalSignOut';
+import { Button } from '../Button';
+
 import { styles } from './styles';
 
 export function Profile() {
-    const { user } = userAuth();
+    const { user, signOut } = userAuth();
+    const [openSignOutModal, setOpenSignOutModal] = useState(false);
+
+    function handleOpenSignOut(){
+        setOpenSignOutModal(true);
+    }
+    
+    function handleCloseSignOut(){
+        setOpenSignOutModal(false);
+    }  
+    
+    function handleSignOut(){
+        signOut();
+    }
 
   return (
     <View style={styles.container}>
-        <Avatar urlImage={user.avatar} />
+
+        <RectButton onPress={handleOpenSignOut}>
+            <Avatar urlImage={user.avatar} />
+        </RectButton>
 
         <View>
             <View style={styles.user}>
@@ -30,6 +51,11 @@ export function Profile() {
                 Hoje é dia de vitória
             </Text>
         </View>
+
+
+        <ModalSignOut visible={openSignOutModal} closeModal={handleCloseSignOut} signOut={handleSignOut}/>
+
     </View>
   );
 }
+

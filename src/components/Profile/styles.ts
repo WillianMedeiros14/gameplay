@@ -24,5 +24,6 @@ export const styles = StyleSheet.create({
     message: {
         fontFamily: theme.fonts.text400,
         color: theme.colors.highlight
-    }
+    },
+    
 });
